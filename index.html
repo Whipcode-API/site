@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Whipcode API</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="color-scheme" content="light only" />
+        <meta
+            name="description"
+            content="A low cost REST API for running untrusted code on remote servers."
+        />
+        <meta property="og:site_name" content="Whipcode API" />
+        <meta property="og:title" content="Whipcode API" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:description"
+            content="A low cost REST API for running untrusted code on remote servers."
+        />
+        <meta property="og:url" content="index.html" />
+        <link rel="canonical" href="index.html" />
+        <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="css/main.css" />
+        <noscript
+            ><style>
+                body {
+                    overflow: auto !important;
+                }
+                body:after {
+                    display: none !important;
+                }
+                #main > .inner {
+                    opacity: 1 !important;
+                }
+                #main {
+                    opacity: 1 !important;
+                    transform: none !important;
+                    transition: none !important;
+                    filter: none !important;
+                }
+                #main > .inner > section {
+                    opacity: 1 !important;
+                    transform: none !important;
+                    transition: none !important;
+                    filter: none !important;
+                }
+                #main > .inner > section > * {
+                    opacity: 1 !important;
+                    transform: none !important;
+                    transition: none !important;
+                    filter: none !important;
+                }
+            </style></noscript
+        >
+    </head>
+    <body class="is-loading">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 40 40"
+            display="none"
+            width="0"
+            height="0"
+        >
+            <symbol
+                id="icon-5df67a211ae41c4e5f96b6e0ea004ca3"
+                viewBox="0 0 40 40"
+            >
+                <path
+                    d="M28,31.4c-0.3-0.3-0.7-0.5-1.2-0.5h-1.6V16.1c0-0.4-0.2-0.8-0.5-1.2c-0.3-0.3-0.7-0.5-1.2-0.5h-9.8c-0.4,0-0.8,0.2-1.2,0.5 s-0.5,0.7-0.5,1.2v3.3c0,0.4,0.2,0.8,0.5,1.2c0.3,0.3,0.7,0.5,1.2,0.5h1.6v9.8h-1.6c-0.4,0-0.8,0.2-1.2,0.5s-0.5,0.7-0.5,1.2v3.3 c0,0.4,0.2,0.8,0.5,1.2s0.7,0.5,1.2,0.5h13.1c0.4,0,0.8-0.2,1.2-0.5s0.5-0.7,0.5-1.2v-3.3C28.5,32.1,28.3,31.7,28,31.4z M24.7,1.9 c-0.3-0.3-0.7-0.5-1.2-0.5H17c-0.4,0-0.8,0.2-1.2,0.5c-0.3,0.3-0.5,0.7-0.5,1.2V8c0,0.4,0.2,0.8,0.5,1.2c0.3,0.3,0.7,0.5,1.2,0.5 h6.5c0.4,0,0.8-0.2,1.2-0.5c0.3-0.3,0.5-0.7,0.5-1.2V3.1C25.2,2.6,25.1,2.2,24.7,1.9z"
+                />
+            </symbol>
+            <symbol
+                id="icon-be848c9691a8e3f7630e3908e426bf9f"
+                viewBox="0 0 40 40"
+            >
+                <path
+                    d="M37.9,10.6l-3.2-3.2c-0.4-0.4-1-0.7-1.6-0.7c-0.6,0-1.2,0.2-1.6,0.7L15.9,23l-7-7c-0.4-0.4-1-0.7-1.6-0.7S6.1,15.6,5.6,16 l-3.2,3.2c-0.4,0.4-0.7,1-0.7,1.6S2,22,2.4,22.5l8.6,8.6l3.2,3.2c0.4,0.4,1,0.7,1.6,0.7c0.6,0,1.2-0.2,1.6-0.7l3.2-3.2l17.2-17.2 c0.4-0.4,0.7-1,0.7-1.6C38.6,11.6,38.4,11.1,37.9,10.6z"
+                />
+            </symbol>
+            <symbol
+                id="icon-8c4b37645de3c276d895d87df51ba614"
+                viewBox="0 0 40 40"
+            >
+                <path
+                    d="M36,20.3c0,3.5-1,6.6-3.1,9.4c-2,2.8-4.7,4.7-7.9,5.8c-0.4,0.1-0.6,0-0.8-0.1c-0.2-0.2-0.3-0.4-0.3-0.6v-4.4 c0-1.3-0.4-2.3-1.1-3c0.8-0.1,1.5-0.2,2.1-0.4c0.6-0.2,1.3-0.4,2-0.8c0.7-0.4,1.2-0.8,1.7-1.4c0.5-0.5,0.8-1.3,1.1-2.2 s0.4-2,0.4-3.1c0-1.7-0.5-3.1-1.6-4.3c0.5-1.3,0.5-2.7-0.2-4.2c-0.4-0.1-1,0-1.7,0.2c-0.7,0.3-1.4,0.6-1.9,0.9L24,12.5 c-1.3-0.4-2.6-0.5-4-0.5s-2.7,0.2-4,0.5c-0.2-0.2-0.5-0.3-0.9-0.6c-0.4-0.2-0.9-0.5-1.7-0.8c-0.8-0.3-1.4-0.4-1.8-0.3 c-0.6,1.6-0.7,3-0.1,4.2c-1.1,1.2-1.6,2.6-1.6,4.3c0,1.2,0.1,2.2,0.4,3.1s0.6,1.6,1.1,2.2s1,1,1.7,1.4c0.7,0.4,1.3,0.6,2,0.8 c0.6,0.2,1.3,0.3,2.1,0.4c-0.6,0.5-0.9,1.2-1,2.1c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3,0.1-0.7,0.1-1.2,0.1c-0.5,0-0.9-0.1-1.4-0.4 c-0.5-0.3-0.8-0.7-1.2-1.3c-0.3-0.4-0.6-0.8-1-1.1c-0.4-0.3-0.8-0.4-1-0.5L9,26.5c-0.3,0-0.5,0-0.6,0.1c-0.1,0.1-0.1,0.1-0.1,0.2 c0,0.1,0.1,0.2,0.2,0.3c0.1,0.1,0.2,0.2,0.3,0.2l0.1,0.1c0.3,0.1,0.6,0.4,0.9,0.8s0.5,0.7,0.7,1.1l0.2,0.5c0.2,0.5,0.5,1,0.9,1.3 c0.4,0.3,0.9,0.5,1.4,0.6c0.5,0.1,1,0.1,1.4,0.1c0.5,0,0.9,0,1.2-0.1l0.5-0.1c0,0.5,0,1.1,0,1.9c0,0.7,0,1.1,0,1.1 c0,0.2-0.1,0.5-0.3,0.6c-0.2,0.2-0.5,0.2-0.8,0.1c-3.2-1.1-5.8-3-7.9-5.8S4,23.8,4,20.3c0-2.9,0.7-5.6,2.1-8S9.5,7.8,12,6.4 s5.1-2.1,8-2.1s5.6,0.7,8,2.1s4.4,3.4,5.8,5.8S36,17.4,36,20.3L36,20.3z"
+                />
+            </symbol>
+            <symbol
+                id="icon-0936261325411f95d4c72d19064ecbfc"
+                viewBox="0 0 40 40"
+            >
+                <path
+                    d="M13.98,30.77c0,1.17-0.41,2.17-1.23,2.99C11.94,34.59,10.94,35,9.77,35c-1.17,0-2.16-0.41-2.98-1.23 c-0.82-0.82-1.23-1.82-1.23-2.99s0.41-2.17,1.23-2.99c0.82-0.82,1.81-1.23,2.98-1.23c1.17,0,2.16,0.41,2.98,1.23 C13.57,28.6,13.98,29.6,13.98,30.77z M25.21,33.48c0.03,0.41-0.1,0.76-0.37,1.06C24.57,34.85,24.23,35,23.8,35h-2.96 c-0.37,0-0.68-0.12-0.94-0.36c-0.26-0.24-0.41-0.55-0.44-0.91c-0.32-3.36-1.67-6.23-4.05-8.62c-2.38-2.39-5.24-3.74-8.58-4.06 c-0.37-0.03-0.67-0.18-0.91-0.44c-0.24-0.26-0.36-0.58-0.36-0.95v-2.97c0-0.43,0.15-0.77,0.46-1.03c0.25-0.25,0.56-0.37,0.94-0.37 h0.11c2.34,0.19,4.57,0.78,6.71,1.77c2.13,0.99,4.03,2.32,5.68,4c1.67,1.66,2.99,3.56,3.98,5.7C24.43,28.89,25.02,31.13,25.21,33.48 z M36.43,33.52c0.03,0.4-0.1,0.74-0.39,1.03c-0.26,0.29-0.6,0.44-1.01,0.44h-3.14c-0.38,0-0.71-0.13-0.98-0.39 c-0.27-0.26-0.41-0.57-0.43-0.94c-0.18-3.16-0.91-6.15-2.21-8.99c-1.3-2.84-2.99-5.31-5.08-7.4c-2.08-2.09-4.54-3.79-7.37-5.1 c-2.83-1.31-5.81-2.05-8.96-2.25C6.51,9.93,6.2,9.79,5.95,9.52C5.69,9.24,5.56,8.92,5.56,8.56V5.41C5.56,5,5.71,4.66,6,4.4 C6.26,4.13,6.59,4,6.97,4h0.07c3.83,0.19,7.49,1.07,11,2.64c3.5,1.57,6.61,3.73,9.33,6.47c2.73,2.73,4.88,5.85,6.45,9.37 C35.37,26,36.24,29.68,36.43,33.52z"
+                />
+            </symbol>
+            <symbol
+                id="icon-2af5f87d0d65109dbd7d310d35d25ddb"
+                viewBox="0 0 40 40"
+            >
+                <path
+                    d="M21.1,34.4h-2.5c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.7V18.3l-5.8,5.8c-0.5,0.5-1.1,0.7-1.8,0.7 c-0.7,0-1.3-0.2-1.8-0.7l-1.5-1.5c-0.5-0.5-0.7-1.1-0.7-1.8c0-0.7,0.2-1.3,0.7-1.8L18,6.3c0.5-0.5,1.1-0.7,1.8-0.7 c0.7,0,1.3,0.2,1.8,0.7L34.4,19c0.5,0.5,0.7,1.1,0.7,1.8c0,0.7-0.2,1.3-0.7,1.8l-1.5,1.5c-0.5,0.5-1.1,0.7-1.8,0.7s-1.3-0.2-1.8-0.7 l-5.8-5.8v13.8c0,0.7-0.2,1.2-0.7,1.7C22.3,34.2,21.8,34.4,21.1,34.4z"
+                />
+            </symbol>
+        </svg>
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <section id="home-section">
+                        <h1 id="text03"><strong>whipcode</strong></h1>
+                        <p id="text26">
+                            <span class="p"
+                                ><strong
+                                    >A low cost REST API for running untrusted
+                                    code on remote servers.</strong
+                                ></span
+                            ><span class="p"
+                                >Subscribe to a free or paid plan on
+                                <a
+                                    href="https://rapidapi.com/Whipcode/api/whipcode/pricing"
+                                    target="_blank"
+                                    >RapidAPI</a
+                                >
+                                to get started.<br />
+                                Or host it yourself, it&#39;s open source!</span
+                            >
+                            <span class="p"
+                                >We do not store submitted code or any form of
+                                user data on our servers.<br />
+                                Billing, authentication and rate limits are
+                                managed by RapidAPI.</span
+                            >
+                        </p>
+                        <ul id="buttons02" class="buttons">
+                            <li>
+                                <a href="#docs" class="button n01"
+                                    ><svg aria-labelledby="icon-title">
+                                        <title id="icon-title">
+                                            Information
+                                        </title>
+                                        <use
+                                            xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"
+                                        ></use></svg
+                                    ><span class="label">Docs</span></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://status.whipcode.app/"
+                                    class="button n02"
+                                    ><svg aria-labelledby="icon-title">
+                                        <title id="icon-title">Check</title>
+                                        <use
+                                            xlink:href="#icon-be848c9691a8e3f7630e3908e426bf9f"
+                                        ></use></svg
+                                    ><span class="label">Status</span></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/Whipcode-API"
+                                    target="_blank"
+                                    class="button n03"
+                                    ><svg aria-labelledby="icon-title">
+                                        <title id="icon-title">GitHub</title>
+                                        <use
+                                            xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"
+                                        ></use></svg
+                                    ><span class="label">GitHub</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#news" class="button n04"
+                                    ><svg aria-labelledby="icon-title">
+                                        <title id="icon-title">Feed</title>
+                                        <use
+                                            xlink:href="#icon-0936261325411f95d4c72d19064ecbfc"
+                                        ></use></svg
+                                    ><span class="label">News</span></a
+                                >
+                            </li>
+                        </ul>
+                        <p id="text25">
+                            <a href="mailto:hello@whipcode.app"
+                                >hello@whipcode.app</a
+                            >
+                        </p>
+                        <p id="text08">
+                            This service is managed by
+                            <a href="https://av9.dev/" target="_blank"
+                                >AnnikaV9</a
+                            >
+                        </p>
+                    </section>
+                    <section id="news-section">
+                        <h2 id="text05">News</h2>
+                        <ul id="buttons01" class="buttons">
+                            <li>
+                                <a href="#home" class="button n01"
+                                    >&lt;- Home</a
+                                >
+                            </li>
+                        </ul>
+                        <div id="list07" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>04/11/24</strong></span
+                                        ><br />Added 14 more languages.<br />Added
+                                        option for passing compiler arguments.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>29/10/24</strong></span
+                                        ><br />Whipcode is now open source!<br /><a
+                                            href="https://github.com/Whipcode-API/whipcode"
+                                            target="_blank"
+                                            >https://github.com/Whipcode-API/whipcode</a
+                                        >
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>24/10/24</strong></span
+                                        ><br />Added Java and Go compilers.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>19/10/24</strong></span
+                                        ><br />Out of beta phase!<br />Increased
+                                        reliability and performance.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>12/06/23</strong></span
+                                        ><br />Added Haskell compiler.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>11/06/23</strong></span
+                                        ><br />Lowered pricing.<br />Added C,
+                                        C++, Rust and Fortran compilers.<br />Increased
+                                        free tier request limit.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>20/05/23</strong></span
+                                        ><br />Open beta goes live!
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="docs-section">
+                        <h2 id="text01">API Docs</h2>
+                        <ul id="buttons03" class="buttons">
+                            <li>
+                                <a href="#home" class="button n01"
+                                    >&lt;- Home</a
+                                >
+                            </li>
+                        </ul>
+                        <h2 id="text02">Endpoint</h2>
+                        <p id="text07">
+                            <span class="p"
+                                >Whipcode&#39;s V1 endpoint is
+                                <a
+                                    href="https://whipcode.p.rapidapi.com/run"
+                                    target="_blank"
+                                    >https://whipcode.p.rapidapi.com/run</a
+                                ></span
+                            ><span class="p"
+                                >A
+                                <a href="https://rapidapi.com/" target="_blank"
+                                    >RapidAPI</a
+                                >
+                                key and Whipcode
+                                <a
+                                    href="https://rapidapi.com/Whipcode/api/whipcode/pricing"
+                                    target="_blank"
+                                    >subscription</a
+                                >
+                                are required to access the endpoint.</span
+                            >
+                            <span class="p"
+                                >Only POST requests are accepted, GET requests
+                                will be rejected.</span
+                            >
+                        </p>
+                        <h2 id="text10">Headers</h2>
+                        <p id="text11">
+                            <span class="p"
+                                >These headers are required for requests:</span
+                            ><span class="p"
+                                ><span style="color: white"
+                                    >Content-Type: application/json<br />X-RapidAPI-Key:
+                                    &lt;your-rapidapi-key&gt;<br />X-RapidAPI-Host:
+                                    whipcode.p.rapidapi.com</span
+                                ></span
+                            >
+                        </p>
+                        <h2 id="text12">Parameters</h2>
+                        <div id="list01" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>code</strong></span
+                                        >
+                                        string<br />The source code, base64
+                                        encoded.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>language_id</strong></span
+                                        >
+                                        integer/string<br />Language ID of the
+                                        submitted code.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>args</strong></span
+                                        >
+                                        string<br />Compiler/interpreter args
+                                        separated by spaces.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="table01" class="table-wrapper">
+                            <div class="table-inner">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Language</th>
+                                            <th>ID</th>
+                                            <th>RT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Python</td>
+                                            <td>1</td>
+                                            <td>cpython</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Javascript</td>
+                                            <td>2</td>
+                                            <td>node</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bash</td>
+                                            <td>3</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Perl</td>
+                                            <td>4</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lua</td>
+                                            <td>5</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ruby</td>
+                                            <td>6</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C</td>
+                                            <td>7</td>
+                                            <td>gcc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C++</td>
+                                            <td>8</td>
+                                            <td>gcc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rust</td>
+                                            <td>9</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fortran</td>
+                                            <td>10</td>
+                                            <td>gfortran</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Haskell</td>
+                                            <td>11</td>
+                                            <td>runghc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Java</td>
+                                            <td>12</td>
+                                            <td>openjdk</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Go</td>
+                                            <td>13</td>
+                                            <td>gccgo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TypeScript</td>
+                                            <td>14</td>
+                                            <td>swc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Common Lisp</td>
+                                            <td>15</td>
+                                            <td>sbcl</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Racket</td>
+                                            <td>16</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Crystal</td>
+                                            <td>17</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Clojure</td>
+                                            <td>18</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>x86 Assembly</td>
+                                            <td>19</td>
+                                            <td>nasm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zig</td>
+                                            <td>20</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nim</td>
+                                            <td>21</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>D</td>
+                                            <td>22</td>
+                                            <td>gdc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C#</td>
+                                            <td>23</td>
+                                            <td>mono</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rscript</td>
+                                            <td>24</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dart</td>
+                                            <td>25</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VB.NET</td>
+                                            <td>26</td>
+                                            <td>mono</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F#</td>
+                                            <td>27</td>
+                                            <td>mono</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <h2 id="text13">Server Response</h2>
+                        <p id="text14">Successful requests will return:</p>
+                        <div id="list02" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>stdout</strong></span
+                                        >
+                                        string<br />All data captured from
+                                        stdout.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>stderr</strong></span
+                                        >
+                                        string<br />All data captured from
+                                        stderr.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong
+                                                >container_age</strong
+                                            ></span
+                                        >
+                                        float<br />Duration the container
+                                        allocated for your code ran, in seconds.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>timeout</strong></span
+                                        >
+                                        boolean<br />Boolean value depending on
+                                        whether your container lived past the
+                                        timeout period. Timeout is 15 seconds,
+                                        after which your container gets
+                                        forcefully killed. A reply from a
+                                        timed-out request will not have any data
+                                        in
+                                        <span style="color: white"
+                                            ><strong>stdout</strong></span
+                                        >
+                                        and
+                                        <span style="color: white"
+                                            ><strong>stderr</strong></span
+                                        >.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <p id="text15">
+                            In the event of an error, or an invalid/rejected
+                            request:
+                        </p>
+                        <div id="list03" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>detail</strong></span
+                                        >
+                                        string<br />Details about why the
+                                        request failed to complete.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <p id="text16">
+                            The response will also contain the appropriate
+                            status codes, which follow the guidelines in
+                            <a
+                                href="https://restfulapi.net/http-status-codes"
+                                target="_blank"
+                                >restfulapi.net/http-status-codes</a
+                            >
+                        </p>
+                        <p id="text17">
+                            If the Whipcode API is down, RapidAPI will return
+                            their own response which will contain:
+                        </p>
+                        <div id="list04" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>messages</strong></span
+                                        >
+                                        string
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>info</strong></span
+                                        >
+                                        string
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <p id="text18">
+                            Similarly, if your API key is invalid or your
+                            request size exceeds 500 KB, the response will
+                            contain:
+                        </p>
+                        <div id="list05" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>message</strong></span
+                                        >
+                                        string
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2 id="text19">Example Request</h2>
+                        <p id="text23">
+                            Here&#39;s an example Python snippet that makes a
+                            request to run Javascript:
+                        </p>
+                        <p id="text20">
+                            <span class="p"
+                                ><span style="color: #e987fa">import</span>
+                                <span style="color: white">requests</span><br />
+                                <span style="color: #e987fa">import</span>
+                                <span style="color: white">base64</span></span
+                            ><span class="p"
+                                ><span style="color: white">url =</span>
+                                <span style="color: lightgreen"
+                                    >&quot;https://whipcode.p.rapidapi.com/run&quot;</span
+                                ></span
+                            ><span class="p"
+                                ><span style="color: white">source =</span>
+                                <span style="color: lightgreen"
+                                    >&quot;&quot;&quot;<br />console.log(&#39;Hello
+                                    world!&#39;);<br />&quot;&quot;&quot;</span
+                                ></span
+                            >
+                            <span class="p"
+                                ><span style="color: white"
+                                    >encoded = base64.</span
+                                ><span style="color: #f9c76c">b64encode</span
+                                ><span style="color: white">(source.</span
+                                ><span style="color: #f9c76c">encode</span
+                                ><span style="color: white">()).</span
+                                ><span style="color: #f9c76c">decode</span>
+                                <span style="color: white">()</span> </span
+                            ><span class="p"
+                                ><span style="color: white">payload = {</span
+                                ><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    style="color: lightgreen"
+                                    >&quot;language_id&quot;</span
+                                ><span style="color: white">:</span>
+                                <span style="color: lightgreen"
+                                    >&quot;2&quot;</span
+                                >
+                                <span style="color: white">,</span><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    style="color: lightgreen"
+                                    >&quot;code&quot;</span
+                                ><span style="color: white"
+                                    >: encoded<br />
+                                    }</span
+                                ></span
+                            ><span class="p"
+                                ><span style="color: white">headers = {</span
+                                ><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    style="color: lightgreen"
+                                    >&quot;Content-Type&quot;</span
+                                ><span style="color: white">:</span>
+                                <span style="color: lightgreen"
+                                    >&quot;application/json&quot;</span
+                                ><span style="color: white">,</span><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    style="color: lightgreen"
+                                    >&quot;X-RapidAPI-Key&quot;</span
+                                ><span style="color: white">:</span>
+                                <span style="color: lightgreen"
+                                    >&quot;&lt;your-rapidapi-key&gt;&quot;</span
+                                ><span style="color: white">,</span><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    style="color: lightgreen"
+                                    >&quot;X-RapidAPI-Host&quot;</span
+                                ><span style="color: white">:</span>
+                                <span style="color: lightgreen"
+                                    >&quot;whipcode.p.rapidapi.com&quot;</span
+                                ><br />
+                                <span style="color: white">}</span> </span
+                            ><span class="p"
+                                ><span style="color: white"
+                                    >response = requests.</span
+                                ><span style="color: #f9c76c">post</span
+                                ><span style="color: white"
+                                    >(url, json=payload, headers=headers)</span
+                                ></span
+                            >
+                        </p>
+                        <p id="text09">The response:</p>
+                        <p id="text24">
+                            <span class="p"
+                                ><span style="color: white"
+                                    >{<br />
+                                    &nbsp;&nbsp;&#39;stdout&#39;: &#39;Hello
+                                    world!\n&#39;,<br />
+                                    &nbsp;&nbsp;&#39;stderr&#39;: &#39;&#39;,<br />
+                                    &nbsp;&nbsp;&#39;container_age&#39;:
+                                    0.335,<br />
+                                    &nbsp;&nbsp;&#39;timeout&#39;: False<br />
+                                    }</span
+                                ></span
+                            >
+                        </p>
+                        <h2 id="text21">Execution Limits</h2>
+                        <p id="text22">
+                            Each request starts a new container which runs the
+                            submitted code, and is destroyed after. Here are
+                            some of the resource limits that may affect your
+                            code&#39;s execution:
+                        </p>
+                        <div id="list06" class="list">
+                            <ul>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>Memory:</strong></span
+                                        >
+                                        During periods with low server load,
+                                        containers can use up to 512 mb of
+                                        memory each. During periods with medium
+                                        to high server load, they will be
+                                        limited to somewhere between 128 mb and
+                                        512 mb.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>Processes:</strong></span
+                                        >
+                                        The maximum number of processes allowed
+                                        inside each container is 32.
+                                        Spawning/forking processes too much may
+                                        cause errors.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong
+                                                >Multiprocessing:</strong
+                                            ></span
+                                        >
+                                        Each container is only allowed to
+                                        execute its processes on a single cpu
+                                        core, making multiprocessing
+                                        ineffective.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>Networking:</strong></span
+                                        >
+                                        Disabled completely for security/abuse
+                                        reasons.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span style="color: white"
+                                            ><strong>Filesystem:</strong></span
+                                        >
+                                        The root filesystem of the containers is
+                                        read-only. However, a tmpfs of 64 mb is
+                                        mounted at
+                                        <span style="color: white">/tmp</span>
+                                        as read-write, letting you perform write
+                                        operations there.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul id="buttons04" class="buttons">
+                            <li>
+                                <a href="#docs" class="button n01"
+                                    ><svg aria-labelledby="icon-title">
+                                        <title id="icon-title">Arrow Up</title>
+                                        <use
+                                            xlink:href="#icon-2af5f87d0d65109dbd7d310d35d25ddb"
+                                        ></use></svg
+                                    ><span class="label">Back To Top</span></a
+                                >
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script src="js/index.js"></script>
+    </body>
+</html>
